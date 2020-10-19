@@ -18,8 +18,6 @@
 html {
   box-sizing: border-box;
   font-family: 'Spartan', sans-serif;
-  color: var(--dark_slate);
-  ;
 }
 
 body {
@@ -28,8 +26,8 @@ body {
   line-height: 1.4;
 }
 
-.logo {
-  width: 60vw;
+h2 {
+  font-family: 'Krona One', sans-serif;
 }
 
 .btn {
@@ -50,30 +48,41 @@ img {
 }
 
 /* Navigation */
-.main-nav ul {
-  list-style-type: none;
+nav {
+  /* width: 100%; */
+  overflow: auto;
+}
+
+ul {
   display: grid;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
-  background-color: #333;
-  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--charcoal_grey);
+  grid-template-columns: repeat(5, 1fr);
+  padding: 0;
+  margin: 0 0 0 125px;
+  list-style-type: none;
 }
 
-li {
+.logo img {
+  position: absolute;
+  margin-top: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* li {
   float: right;
-}
-
-.main-nav a {
+} */
+nav a {
   display: block;
   background-color: var(--charcoal_grey);
   color: var(--light);
   text-align: center;
-  padding: 14px 16px;
+  padding: 22px 16px;
   text-decoration: none;
 }
 
-.main-nav a:hover {
+nav a:hover {
   background-color: var(--Cerulean);
 }
 
@@ -82,7 +91,7 @@ li {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
-    'showcase showcase top-box-a'
+    /* 'showcase showcase top-box-a' */
     'showcase showcase top-box-b';
 }
 
@@ -90,7 +99,6 @@ li {
 .showcase {
   grid-area: showcase;
   min-height: 400px;
-  background: url(img/pexels-ekaterina-bolovtsova-4049517.jpg);
   background-size: cover;
   background-position: center;
   padding: 3rem;
@@ -116,41 +124,18 @@ li {
   font-family: Arial, Helvetica, Sans-serif;
 }
 
-/* makes a horizontal line thru the h2 */
 #mission h2, #info h2 {
   text-align: center;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-gap: 20px;
-}
-
-@supports (display: grid) {
-
-  #mission h2:before,
-  #mission h2:after {
-    content: "";
-    align-self: center;
-    border-top: 1px solid #999;
-  }
-}
-
-@supports (display: grid) {
-
-  #info h2:before,
-  #info h2:after {
-    content: "";
-    align-self: center;
-    border-top: 1px solid #999;
-  }
+  padding: .5rem;
 }
 
 #mission p, #info p {
   text-align: center;
 }
 
-/* end of horizontal line thru the h2 */
 #mission {
   background-color: var(--silver_fox);
+  box-shadow: var(--shadow);
 }
 
 /* Top Box */
@@ -163,21 +148,25 @@ li {
   padding: 1.5rem;
 }
 
-.top-box-a {
+/* .top-box-a {
   grid-area: top-box-a;
-}
-
+} */
 .top-box-b {
   grid-area: top-box-b;
   background-color: var(--Cerulean);
-  /* background-image: radial-gradient(rgba(150, 36, 137, 0), rgba(150, 36, 137, 1)); */
+  color: var(--silver_fox);
+  text-align: center;
 }
 
 /* Boxes responsive allow for adding more box topics when needed */
 .boxes {
+  padding: 3em;
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  grid-gap: 2em;
+  margin-left: 20em;
+  margin-right: 20em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+  grid-auto-rows: 300px;
 }
 
 .box {
@@ -190,9 +179,26 @@ li {
 
 .box h2 {
   color: var(--Apricot);
+  font-size: 1.5rem;
 }
 
 /* Info */
+.lets_talk {
+  background: var(--silver_fox);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem;
+}
+
+#twitter_feed p {
+  text-align: center;
+  box-shadow: var(--shadow);
+  padding: 9rem;
+}
+
+/* Action */
 .action {
   background: var(--silver_fox);
   box-shadow: var(--shadow);
@@ -225,10 +231,6 @@ a.action-btn {
   border: 0;
 }
 
-#info {
-  background-color: var(--silver_fox);
-}
-
 /* Footer */
 footer {
   margin-top: 2rem;
@@ -238,14 +240,64 @@ footer {
   padding: 1rem;
 }
 
+/* slider */
+.carousel-item {
+  height: 32rem;
+  background: #777;
+  color: white;
+  position: relative;
+}
+
+.container {
+  /* text at bottom */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 50px;
+}
+
+.overlay-image-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: centre;
+  background-size: cover;
+  background-image: url(img/pexels-ekaterina-bolovtsova-4049517.jpg);
+}
+
+.overlay-image-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: centre;
+  background-size: cover;
+  background-image: url(img/pexels-pixabay-45842.jpg);
+}
+
+.overlay-image-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: centre;
+  background-size: cover;
+  background-image: url(img/pexels-rfstudio-3810760.jpg);
+  opacity: 0.7;
+}
+
 /* Media Queries */
 /* Effective for 700px of less */
 @media(max-width: 700px) {
 
   /*  2 top boxes to slide under the showcase img on a large mobile */
   .top-container {
-    grid-template-areas:
-      'showcase showcase'
+    grid-template-areas: 'showcase showcase'
       'top-box-a top-box-b'
   }
 
@@ -253,9 +305,22 @@ footer {
     font-size: 2.5rem;
   }
 
-  .main-nav ul {
+  .logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    transform: none;
+  }
+
+  nav ul {
     /* makes the nav stack up as a column on a mobile */
     grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  nav a {
+    padding: 10px 20px;
   }
 
   .action {
@@ -268,23 +333,32 @@ footer {
     text-align: center;
     margin: auto;
   }
+
+  .boxes {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .lets_talk {
+    /* makes the section stack up as a column on a mobile */
+    grid-template-columns: 1fr;
+  }
 }
 
 @media(max-width: 500px) {
 
   /*  2 top boxes to slide under the showcase img on a SMALL mobile */
   .top-container {
-    grid-template-areas:
-      'showcase'
+    grid-template-areas: 'showcase'
       'top-box-a'
       'top-box-b'
   }
-}
 
-ion-icon {
-  font-size: 32px;
-}
+  ion-icon {
+    font-size: 32px;
+  }
 
-.twitter_icon, .fb_icon, .insta_icon {
-  margin: 8px;
+  .twitter_icon, .fb_icon, .insta_icon {
+    margin: 8px;
+  }
 }
