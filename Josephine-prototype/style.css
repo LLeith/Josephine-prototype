@@ -18,12 +18,15 @@
 html {
   box-sizing: border-box;
   font-family: 'Spartan', sans-serif;
+  overflow-x: hidden; // fixes laptop horizontal scroll, but then cuts off content on i pad & mobile
 }
 
 body {
   background: var(--light);
   margin: 30px 50px;
   line-height: 1.4;
+  overflow-x: hidden; // fixes laptop horizontal scroll
+  position: relative; // fixes laptop horizontal scroll
 }
 
 h2 {
@@ -123,6 +126,7 @@ nav a:hover {
   color: var(--light);
   font-family: 'Krona One', Helvetica, Sans-serif;
   font-weight: bold;
+  padding-top: 30px;
 }
 
 .container p {
@@ -143,6 +147,7 @@ nav a:hover {
 
 #mission {
   background-color: var(--silver_fox);
+  box-shadow: var(--shadow);
   padding: 10px;
   margin: 0;
 }
@@ -282,6 +287,7 @@ footer {
   top: 0;
   background-position: centre;
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .overlay-image-2 {
@@ -292,6 +298,7 @@ footer {
   top: 0;
   background-position: centre;
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .overlay-image-3 {
@@ -306,7 +313,7 @@ footer {
 }
 
 /* Media Queries */
-/* Effective for 700px of less */
+/* Effective for 700px or less */
 @media(max-width: 700px) {
 
   /*  2 top boxes to slide under the showcase img on a large mobile */
@@ -317,6 +324,11 @@ footer {
 
   .top-box-b {
     width: 100%;
+  }
+
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
   }
 
   .container h1 {
@@ -364,6 +376,11 @@ footer {
 }
 
 @media(max-width: 500px) {
+  .carousel-item>img {
+    width: 200px;
+    height: 400px;
+    object-fit: cover;
+  }
 
   /*  2 top boxes to slide under the showcase img on a SMALL mobile */
   .top-container {
