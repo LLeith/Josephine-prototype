@@ -15,6 +15,12 @@
   --Deep_Apricot: #ED6908;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html {
   box-sizing: border-box;
   font-family: 'Spartan', sans-serif;
@@ -51,8 +57,8 @@ img {
 }
 
 .wrapper {
-  display: grid;
-  grid-gap: 20px;
+  display: block;
+  /* grid-gap: 20px; */
 }
 
 /* Navigation */
@@ -111,7 +117,7 @@ nav a:hover {
   background-size: cover;
   background-position: center;
   padding: 2rem;
-  margin: auto;
+  margin-top: 2rem;
   /* flexbox */
   display: flex;
   flex-direction: column;
@@ -149,7 +155,7 @@ nav a:hover {
   background-color: var(--silver_fox);
   box-shadow: var(--shadow);
   padding: 10px;
-  margin: 0;
+  margin-top: 2rem;
 }
 
 /* Top Box */
@@ -172,6 +178,7 @@ nav a:hover {
   color: var(--silver_fox);
   text-align: center;
   width: 350px;
+  margin-top: 2rem;
 }
 
 /* Boxes responsive allow for adding more box topics when needed */
@@ -222,6 +229,7 @@ nav a:hover {
   grid-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
   padding: 3rem;
+  margin-top: 2rem;
 }
 
 .action h2 {
@@ -276,7 +284,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 
 .overlay-image-1 {
@@ -313,8 +321,8 @@ footer {
 }
 
 /* Media Queries */
-/* Effective for 700px or less */
-@media(max-width: 700px) {
+/* Effective for 768px or less - i pads */
+@media(max-width: 767px) {
 
   /*  2 top boxes to slide under the showcase img on a large mobile */
   .top-container {
@@ -369,6 +377,10 @@ footer {
     margin-left: 0;
   }
 
+  .box {
+    word-break: break-word;
+  }
+
   .lets_talk {
     /* makes the section stack up as a column on a mobile */
     grid-template-columns: 1fr;
@@ -391,6 +403,22 @@ footer {
 
   ion-icon {
     font-size: 32px;
+  }
+
+  .box {
+    word-break: break-word;
+  }
+
+  #info {
+    text-align: center;
+  }
+
+  #twitter_feed {
+    text-align: center;
+  }
+
+  #twitter_feed p {
+    padding-right: 2.5rem;
   }
 
   .twitter_icon, .fb_icon, .insta_icon {
